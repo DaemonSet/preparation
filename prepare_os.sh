@@ -1,7 +1,8 @@
 #!/bin/bash
 
-echo "Enter Password: "
+echo "Enter Password:"
 
 read userPass
 
-echo -e "$userPass" | sudo -S echo "$USER ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/$USER
+echo $userPass | sudo -S bash -c "echo '$USER ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/$USER"
+
