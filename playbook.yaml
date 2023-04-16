@@ -1,0 +1,7 @@
+- name: Check Connection
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Ping
+    ansible.builtin.ping:
